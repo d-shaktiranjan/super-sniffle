@@ -1,0 +1,16 @@
+{
+    "name": "super-sniffle",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "type": "module",
+    "scripts": {
+        "dev": "node --watch main.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2"
+    }
+}
