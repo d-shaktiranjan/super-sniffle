@@ -1,9 +1,13 @@
 import express from "express";
 import { join } from "path";
 import { cwd } from "process";
+import cors from "cors";
 import { createReadStream, statSync } from "fs";
+
 const app = express();
 const PORT = 9000;
+
+app.use(cors());
 
 app.get("/", (req, res) => {
     console.log("connected");
