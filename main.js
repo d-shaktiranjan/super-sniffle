@@ -15,9 +15,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/videoplayer", (req, res) => {
-    // console.log("serving");
+    const file = req.query.file;
+    if (!["mobile.webm", "desktop.webm"].includes(file))
+        res.json({
+            isSuccess: true,
+            message: `${file} is not allowed`,
+        });
+
     const range = req.headers.range;
-    const videoPath = "./video.mp4";
+    const videoPath = `./videos/${file}`;
     const videoSize = statSync(videoPath).size;
     const chunkSize = 1 * 1e6;
     const start = Number(range.replace(/\D/g, ""));
