@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 app.get("/videoplayer", (req, res) => {
     const file = req.query.file;
-    if (!["mobile.webm", "desktop.webm"].includes(file))
+    if (!["mobile.webm", "desktop.webm", "video.mp4"].includes(file))
         res.json({
             isSuccess: true,
             message: `${file} is not allowed`,
