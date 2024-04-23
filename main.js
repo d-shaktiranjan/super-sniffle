@@ -1,6 +1,4 @@
 import express from "express";
-import { join } from "path";
-import { cwd } from "process";
 import cors from "cors";
 import { createReadStream, statSync, readdirSync } from "fs";
 
@@ -8,11 +6,6 @@ const app = express();
 const PORT = 9000;
 
 app.use(cors());
-
-app.get("/", (req, res) => {
-    console.log("connected");
-    res.sendFile(join(cwd(), "index.html"));
-});
 
 app.get("/videoplayer", (req, res) => {
     const file = req.query.file;
