@@ -22,7 +22,7 @@ app.get("/videoplayer", (req, res) => {
             message: `${file} is not allowed`,
         });
 
-    const range = req.headers.range;
+    const range = req.headers.range || "0-";
     const videoPath = `./videos/${file}`;
     const videoSize = statSync(videoPath).size;
     const chunkSize = 1 * 1e6;
