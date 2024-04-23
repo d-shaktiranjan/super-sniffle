@@ -2,7 +2,7 @@ import express from "express";
 import { join } from "path";
 import { cwd } from "process";
 import cors from "cors";
-import { createReadStream, statSync } from "fs";
+import { createReadStream, statSync, readdirSync } from "fs";
 
 const app = express();
 const PORT = 9000;
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 app.get("/videoplayer", (req, res) => {
     const file = req.query.file;
-    if (!["mobile.webm", "desktop.webm", "video.mp4"].includes(file))
+    if (!readdirSync("./videos").includes(file))
         res.json({
             isSuccess: true,
             message: `${file} is not allowed`,
