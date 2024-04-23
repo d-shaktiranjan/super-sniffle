@@ -5,7 +5,8 @@
     "main": "main.js",
     "type": "module",
     "scripts": {
-        "dev": "node --watch main.js"
+        "start": "node index.js",
+        "dev": "node --watch index.js"
     },
     "keywords": [],
     "author": "",
