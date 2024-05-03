@@ -36,6 +36,12 @@ router
             message: "Hello Lord JS",
             token,
         });
+    })
+    .delete((req, res) => {
+        res.clearCookie("token", COOKIES_OPTIONS).json({
+            success: true,
+            message: "Cookie removed",
+        });
     });
 
 export default router;
