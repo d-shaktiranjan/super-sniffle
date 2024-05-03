@@ -12,7 +12,9 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
         "express": "^4.19.2"
-    }
+    },
+    "packageManager": "pnpm@9.0.6+sha1.648f6014eb363abb36618f2ba59282a9eeb3e879"
 }

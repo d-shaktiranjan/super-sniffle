@@ -1,11 +1,15 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import { createReadStream, statSync, readdirSync } from "fs";
+import testRouter from "./routes.js";
 
 const app = express();
 const PORT = 9000;
 
 app.use(cors());
+app.use(cookieParser());
+app.use("/test", testRouter);
 
 app.get("/videoplayer", (req, res) => {
     const file = req.query.file;
