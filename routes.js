@@ -5,6 +5,7 @@ const router = Router();
 const SUPER_SECRET_TOKEN = "lord_js_block_the_main_thread";
 const COOKIES_OPTIONS = {
     httpOnly: true,
+    sameSite: "none",
 };
 
 router
