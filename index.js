@@ -7,7 +7,7 @@ import testRouter from "./routes.js";
 const app = express();
 const PORT = 9000;
 
-app.use(cors());
+app.use(cors({ credentials: true }));
 app.use(cookieParser());
 app.use("/test", testRouter);
 
